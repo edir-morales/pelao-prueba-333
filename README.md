@@ -97,3 +97,64 @@ Este proyecto ha sido modificado y desplegado utilizando Gemini CLI. A continuac
 ### Control de Versiones con Git
 - Se configuró el repositorio local para sincronizarse con un nuevo repositorio remoto en GitHub (`https://github.com/edir-morales/pelao-prueba-333.git`).
 - Se realizaron commits de todos los cambios mencionados y se subieron al repositorio remoto, estableciendo un control de cambios para el proyecto.
+
+### Conexión FTP para Edición (para usuarios de CLI)
+
+Si deseas editar la página directamente a través de FTP utilizando una interfaz de línea de comandos (CLI) o scripts, puedes conectarte de la siguiente manera. Este método utiliza FTP simple (sin TLS) al servidor.
+
+**Detalles de Conexión:**
+- **Host FTP:** `50.31.174.169`
+- **Puerto FTP:** `21`
+- **Usuario:** `xkabal` (la contraseña se debe proporcionar de forma segura)
+
+**Método Utilizado (Python con `ftplib`):**
+
+Puedes usar un script Python similar al siguiente para conectarte y realizar operaciones. Se recomienda usar variables de entorno para la contraseña por seguridad.
+
+```python
+import ftplib
+import os
+
+def connect_ftp_cli():
+    FTP_HOST = '50.31.174.169'
+    FTP_USER = 'xkabal'
+    # Se recomienda usar una variable de entorno para la contraseña
+    FTP_PASS = os.environ.get('FTP_PASSWORD') 
+
+    if not FTP_PASS:
+        print("Error: La variable de entorno 'FTP_PASSWORD' no está configurada.")
+        print("Por favor, configúrala antes de ejecutar el script: export FTP_PASSWORD='tu_contraseña'")
+        return False
+
+    try:
+        print(f"Conectando a FTP://{FTP_HOST} como {FTP_USER}...")
+        ftp = ftplib.FTP(FTP_HOST)
+        ftp.login(FTP_USER, FTP_PASS)
+        print("¡Conexión FTP exitosa!")
+        
+        print("\nContenido del directorio raíz:")
+        ftp.dir() # Lista el contenido del directorio actual
+        
+        # Ejemplo: Cambiar a public_html y listar
+        try:
+            ftp.cwd('public_html')
+            print(f"\nCambiado a /public_html. Contenido:")
+            ftp.dir()
+        except ftplib.error_perm:
+            print("\nNo se pudo cambiar a public_html o no existe.")
+
+        ftp.quit()
+        print("\nConexión FTP cerrada.")
+        return True
+        
+    except ftplib.all_errors as e:
+        print(f"Error de conexión FTP: {e}")
+        return False
+    except Exception as e:
+        print(f"Error inesperado: {e}")
+        return False
+
+if __name__ == "__main__":
+    connect_ftp_cli()
+
+```
