@@ -71,3 +71,29 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Historial de Cambios Recientes (Gestionado por Gemini CLI)
+
+Este proyecto ha sido modificado y desplegado utilizando Gemini CLI. A continuación, se detalla un resumen de los cambios realizados:
+
+### Despliegue Inicial y Conexión FTP
+- Se estableció una conexión FTP exitosa al servidor `50.31.174.169` en el puerto 21, utilizando FTP simple (sin TLS).
+- Se desplegó la aplicación web completa desde el repositorio de GitHub (`https://github.com/papaqb18/multivikings-smart-home`) al directorio `/public_html` del servidor FTP. Esto incluyó la instalación de dependencias (`npm install`) y la construcción del proyecto (`npm run build`).
+
+### Mejoras y Ajustes de Interfaz
+- **Título de la Página (HTML `<title>`)**: Se cambió de "MultiVikings - Domótica y Automatización del Hogar" a "MultiViking".
+- **Título Principal (H1 Visible)**: Se ajustó el texto de "MultiVikings" a "MultiViking".
+- **Corrección de Diseño del Título**: Se implementaron ajustes de CSS (`py-8` y eliminación de `overflow-hidden` en el elemento `section` padre) para asegurar que el título principal se muestre completamente sin recortes.
+- **Información del Pie de Página (Footer)**:
+    - Se eliminó la información de "Madrid, España" y el horario de atención.
+    - Se actualizó la dirección de correo electrónico a `Viniciuscruzat@multiviking.com`.
+    - Se cambió la ubicación a "Chile Santiago".
+- **Gestión de Botones**: Se eliminaron los botones "Consulta Gratuita", "Ver Proyectos", "WhatsApp", "Email", "Solicitar Cotización" y "Hablar con un Experto" de la interfaz. (Nota: Los botones se mantuvieron eliminados según la última instrucción del usuario).
+- **Favicon**: Se configuró `logonuevo.png` como el favicon del sitio.
+- **Logo Principal**:
+    - Se actualizó el logo principal de la página a `logonuevo.png`.
+    - Se ajustó su tamaño a `h-32` y se centró horizontalmente.
+
+### Control de Versiones con Git
+- Se configuró el repositorio local para sincronizarse con un nuevo repositorio remoto en GitHub (`https://github.com/edir-morales/pelao-prueba-333.git`).
+- Se realizaron commits de todos los cambios mencionados y se subieron al repositorio remoto, estableciendo un control de cambios para el proyecto.
