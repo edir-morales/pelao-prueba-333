@@ -158,3 +158,59 @@ if __name__ == "__main__":
     connect_ftp_cli()
 
 ```
+### Uso del Proyecto con Gemini CLI
+
+Este proyecto ha sido diseñado para ser gestionado y modificado de forma interactiva utilizando Gemini CLI. Si deseas colaborar o realizar cambios a través de esta herramienta, sigue los siguientes pasos:
+
+**1. Iniciar Gemini CLI:**
+Abre tu terminal o línea de comandos y ejecuta el comando para iniciar Gemini CLI. (El comando exacto puede variar según tu instalación de Gemini CLI).
+
+**2. Proporcionar Contexto del Proyecto:**
+Una vez iniciado Gemini CLI, es crucial que le proporciones el contexto de tu entorno de trabajo. Esto incluye:
+-   **Directorio de Trabajo Actual:** Asegúrate de que tu terminal esté posicionada en el directorio raíz del proyecto (`C:\PELAO` en este caso, o donde hayas clonado el repositorio `multivikings-repo`).
+-   **Estructura de Carpetas:** Gemini CLI puede solicitar la estructura de carpetas para entender el proyecto. Puedes proporcionarla usando comandos como `ls -R` o `tree` en tu terminal, o simplemente describiéndola.
+
+**Ejemplo de Inicio de Sesión (Contexto Inicial):**
+```
+This is the Gemini CLI. We are setting up the context for our chat.
+Today's date is [fecha actual].
+My operating system is: [tu SO]
+I'm currently working in the directory: C:\PELAO
+Here is the folder structure of the current working directories:
+
+Showing up to 200 items (files + folders).
+
+C:\PELAO\
+├───multivikings-repo
+│   ├───.git
+│   ├───node_modules
+│   ├───public
+│   ├───src
+│   │   ├───assets
+│   │   ├───components
+│   │   │   ├───ui
+│   │   │   └───...
+│   │   └───...
+│   ├───.gitignore
+│   ├───README.md
+│   ├───package.json
+│   └───...
+├───ftp_deploy.py
+├───ftp_upload_final.py
+├───logonuevo.png
+└───...
+```
+
+**3. Interactuar con el Proyecto:**
+Una vez que Gemini CLI tenga el contexto, puedes empezar a darle instrucciones. Por ejemplo:
+-   "Cambia el texto del título principal en la página web."
+-   "Ajusta el tamaño del logo a 100px de alto."
+-   "Despliega los últimos cambios al servidor FTP."
+-   "Actualiza el archivo `README.md` con un nuevo historial de cambios."
+
+Gemini CLI utilizará las herramientas disponibles (como `run_shell_command`, `read_file`, `write_file`, `replace`, etc.) para ejecutar tus solicitudes.
+
+**Consideraciones Importantes:**
+-   **Reconstrucción y Despliegue:** Después de realizar cambios en el código fuente (archivos en `src/`), es necesario reconstruir el proyecto (`npm run build`) y luego desplegar los archivos generados (`dist/`) al servidor FTP. Gemini CLI puede automatizar estos pasos si se le indica.
+-   **Credenciales:** Para operaciones como el `git push` o la conexión FTP, Gemini CLI te pedirá las credenciales necesarias en el momento oportuno.
+-   **Control de Versiones:** Se recomienda encarecidamente utilizar Git para el control de versiones. Gemini CLI puede ayudarte a gestionar commits y pushes.
