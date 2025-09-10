@@ -95,25 +95,7 @@ const Services = () => {
           })}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-card rounded-2xl p-8 border border-primary/20">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            ¿Listo para hacer tu hogar inteligente?
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Nuestro equipo de expertos está aquí para ayudarte a diseñar la solución perfecta 
-            para tus necesidades específicas.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
-              Solicitar Cotización
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="tech" size="lg">
-              Hablar con un Experto
-            </Button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

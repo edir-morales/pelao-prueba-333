@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-smart-home.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-hero">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -21,8 +21,9 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo/Brand */}
           <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
-              MultiVikings
+                        <img src="/logonuevo.png" alt="MultiViking Logo" className="h-32 w-auto mb-4 mx-auto block" />
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4 py-2 leading-normal mt-16">
+              MultiViking
             </h1>
             <div className="flex items-center justify-center gap-2 text-xl text-muted-foreground">
               <Zap className="w-6 h-6 text-primary" />

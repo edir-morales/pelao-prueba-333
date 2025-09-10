@@ -20,14 +20,7 @@ const Footer = () => {
               Especialistas en domótica y automatización del hogar. 
               Transformamos casas en espacios inteligentes y eficientes.
             </p>
-            <div className="flex gap-2">
-              <Button variant="tech" size="sm">
-                WhatsApp
-              </Button>
-              <Button variant="tech" size="sm">
-                Email
-              </Button>
-            </div>
+            
           </div>
 
           {/* Services */}
@@ -64,16 +57,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@multivikings.com</span>
+                <span>Viniciuscruzat@multiviking.com</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Madrid, España</span>
+                <span>Chile Santiago</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Clock className="w-4 h-4 text-primary" />
-                <span>Lun-Vie: 9:00-18:00</span>
-              </div>
+              {/* Horario eliminado segn solicitud */}
             </div>
           </div>
         </div>
