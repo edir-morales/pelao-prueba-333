@@ -105,7 +105,7 @@ Si deseas editar la página directamente a través de FTP utilizando una interfa
 **Detalles de Conexión:**
 - **Host FTP:** `50.31.174.169`
 - **Puerto FTP:** `21`
-- **Usuario:** `xkabal` (la contraseña se debe proporcionar de forma segura)
+
 
 **Método Utilizado (Python con `ftplib`):**
 
